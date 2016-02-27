@@ -1,0 +1,155 @@
+\documentclass{article}
+
+\begin{document}
+<<>>=
+r2s=c("mcas_2011_MTH_grade3_raw2scaled.txt",  #Appendix M raw to scaled table
+      "mcas_2011_MTH_grade4_raw2scaled.txt",
+      "mcas_2011_MTH_grade5_raw2scaled.txt",
+      "mcas_2011_MTH_grade6_raw2scaled.txt",
+      "mcas_2011_MTH_grade7_raw2scaled.txt",
+      "mcas_2011_MTH_grade8_raw2scaled.txt",
+      "mcas_2011_MTH_grade10_raw2scaled.txt")
+@
+<<>>=
+i=1
+rs1=read.table(r2s[i],header=FALSE)
+nitems=length(rs1$V1)/7
+sstable=array(rep(0,nitems),c(nitems,1))
+sst=array(rs1$V1,c(7,nitems))           #define a cols x items array
+scaled=as.numeric(array(sst[2,]))
+str(scaled)
+N=length(scaled)
+N
+raw=1:N-1
+length(raw)
+grade=rep("3",N)
+test=rep("MCAS",N)
+subject=rep("MTH",N)
+year=rep("2011",N)
+R2S=data.frame(test,subject,year,grade,raw,scaled)
+str(R2S)
+@
+<<>>=
+i=2
+rs1=read.table(r2s[i],header=FALSE)
+nitems=length(rs1$V1)/7
+sstable=array(rep(0,nitems),c(nitems,1))
+sst=array(rs1$V1,c(7,nitems))           #define a cols x items array
+scaled=as.numeric(array(sst[2,]))
+str(scaled)
+N=length(scaled)
+N
+raw=1:N-1
+length(raw)
+grade=rep("4",N)
+test=rep("MCAS",N)
+subject=rep("MTH",N)
+year=rep("2011",N)
+df=data.frame(test,subject,year,grade,raw,scaled)
+R2S=rbind(R2S,df)
+str(R2S)
+@
+<<>>=
+i=3
+rs1=read.table(r2s[i],header=FALSE)
+nitems=length(rs1$V1)/7
+sstable=array(rep(0,nitems),c(nitems,1))
+sst=array(rs1$V1,c(7,nitems))           #define a cols x items array
+scaled=as.numeric(array(sst[2,]))
+str(scaled)
+N=length(scaled)
+N
+raw=1:N-1
+length(raw)
+grade=rep("5",N)
+test=rep("MCAS",N)
+subject=rep("MTH",N)
+year=rep("2011",N)
+df=data.frame(test,subject,year,grade,raw,scaled)
+R2S=rbind(R2S,df)
+str(R2S)
+@
+<<>>=
+i=4
+rs1=read.table(r2s[i],header=FALSE)
+nitems=length(rs1$V1)/7
+sstable=array(rep(0,nitems),c(nitems,1))
+sst=array(rs1$V1,c(7,nitems))           #define a cols x items array
+scaled=as.numeric(array(sst[2,]))
+str(scaled)
+N=length(scaled)
+N
+raw=1:N-1
+length(raw)
+grade=rep("6",N)
+test=rep("MCAS",N)
+subject=rep("MTH",N)
+year=rep("2011",N)
+df=data.frame(test,subject,year,grade,raw,scaled)
+R2S=rbind(R2S,df)
+str(R2S)
+@
+<<>>=
+i=5
+rs1=read.table(r2s[i],header=FALSE)
+nitems=length(rs1$V1)/7
+sstable=array(rep(0,nitems),c(nitems,1))
+sst=array(rs1$V1,c(7,nitems))           #define a cols x items array
+scaled=as.numeric(array(sst[2,]))
+str(scaled)
+N=length(scaled)
+N
+raw=1:N-1
+length(raw)
+grade=rep("7",N)
+test=rep("MCAS",N)
+subject=rep("MTH",N)
+year=rep("2011",N)
+df=data.frame(test,subject,year,grade,raw,scaled)
+R2S=rbind(R2S,df)
+str(R2S)
+@
+<<>>=
+i=6
+rs1=read.table(r2s[i],header=FALSE)
+nitems=length(rs1$V1)/7
+sstable=array(rep(0,nitems),c(nitems,1))
+sst=array(rs1$V1,c(7,nitems))           #define a cols x items array
+scaled=as.numeric(array(sst[2,]))
+str(scaled)
+N=length(scaled)
+N
+raw=1:N-1
+length(raw)
+grade=rep("8",N)
+test=rep("MCAS",N)
+subject=rep("MTH",N)
+year=rep("2011",N)
+df=data.frame(test,subject,year,grade,raw,scaled)
+R2S=rbind(R2S,df)
+str(R2S)
+@
+<<>>=
+i=7
+rs1=read.table(r2s[i],header=FALSE)
+nitems=length(rs1$V1)/7
+sstable=array(rep(0,nitems),c(nitems,1))
+sst=array(rs1$V1,c(7,nitems))           #define a cols x items array
+scaled=as.numeric(array(sst[2,]))
+str(scaled)
+N=length(scaled)
+N
+raw=1:N-1
+length(raw)
+grade=rep("10",N)
+test=rep("MCAS",N)
+subject=rep("MTH",N)
+year=rep("2011",N)
+df=data.frame(test,subject,year,grade,raw,scaled)
+R2S=rbind(R2S,df)
+str(R2S)
+@
+<<>>=
+save(R2S,file="R2S.Rdata")
+@
+\end{document}
